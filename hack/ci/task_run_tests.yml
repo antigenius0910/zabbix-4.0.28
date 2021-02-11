@@ -24,8 +24,8 @@ run:
     echo $PATH
 
     apt update
-    apt install -y libgcrypt20-dev
-    apt install -y libssh2-1-dev    
+    apt install -y libssl-dev
+    apt install -y libpcre3-dev 
 
     builddate=$(date --utc +%Y-%m-%d)
     ./configure --enable-agent --with-openssl --program-prefix=cld- --program-suffix=-$builddate --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc
