@@ -1,0 +1,16 @@
+---
+resources:
+  - name: resource-zabbix
+    type: git
+    source:
+      uri: https://github.com/antigenius0910/zabbix-4.0.28.git
+      branch: main
+
+jobs:
+  - name: job-test-zabbix
+    public: true
+    plan:
+      - get: resource-zabbix
+      - task: zabbix-app-tests
+        file: resource-zabbix/hack/ci/task_run_tests.yml
+
